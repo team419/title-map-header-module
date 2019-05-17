@@ -24,7 +24,9 @@
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 - Node 6.13.0
-- etc
+- React 16.8.6
+- Express 4.16.4
+- Body Parser 1.19.0
 
 ## Development
 
