@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const port = 3418;
-let app = express();
+const path = require('path');
 
-app.use(express.static(__dirname + '/../client/dist/'));
-app.use(bodyParser.urlencoded({extended: true}));
+const port = 3418;
+const app = express();
+
+app.use(express.static(path.join(__dirname, '/../client/dist/')));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 app.get('/', (req, res) => {
