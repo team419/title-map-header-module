@@ -1,8 +1,14 @@
-const mysql = require('mysql');
-const mysqlConfig = require('./config');
+// const mysql = require('mysql');
+// const mysqlConfig = require('./config');
 
-const connection = mysql.createConnection(mysqlConfig);
+// const connection = mysql.createConnection(mysqlConfig);
 
-module.exports.connection = {
-  connection,
-};
+// connection.connect((err) => {
+//   if (err) {
+//     console.log('mySQL connection failure');
+//   } else {
+//     console.log('mySQL connection success');
+//   }
+// });
+
+// module.exports = connection;

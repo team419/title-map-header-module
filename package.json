@@ -11,7 +11,8 @@
   "scripts": {
     "test": "jest",
     "react-dev": "webpack -d --watch",
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "acorn": "node database/generateData.js"
   },
   "dependencies": {
     "faker": "^4.1.0",
