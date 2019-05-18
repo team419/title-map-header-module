@@ -3,7 +3,7 @@ const faker = require('faker');
 
 const generateBusiness = function () {
   const businesses = [];
-  for (let i = 0; i < 100; i += 1) {
+  for (let i = 1; i < 101; i += 1) {
     const entry = {
       id: i,
       name: faker.company.companyName(),
@@ -24,6 +24,23 @@ const generateBusiness = function () {
   return businesses;
 };
 
+const generateReviews = function () {
+  const reviews = [];
+  for (let i = 1; i < 1000; i += 1) {
+    const entry = {
+      id: i,
+      username: faker.internet.userName(),
+      text: faker.lorem.paragraph(),
+      rating: Math.floor(Math.random() * Math.floor(5)) + 1,
+      date: faker.date.recent(),
+      businessId: Math.floor(Math.random() * Math.floor(101)),
+    };
+    reviews.push(entry);
+  }
+  return reviews;
+};
+
+// console.log(generateReviews());
 // console.log(generateBusiness());
 
 /*
