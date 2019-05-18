@@ -1,3 +1,4 @@
+import connection from './index';
 
 const faker = require('faker');
 
@@ -39,6 +40,8 @@ const generateReviews = function () {
   }
   return reviews;
 };
+
+connection.query
 
 // console.log(generateReviews());
 // console.log(generateBusiness());

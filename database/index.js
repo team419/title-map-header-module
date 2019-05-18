@@ -3,3 +3,6 @@ const mysqlConfig = require('./config');
 
 const connection = mysql.createConnection(mysqlConfig);
 
+module.exports.connection = {
+  connection,
+};
