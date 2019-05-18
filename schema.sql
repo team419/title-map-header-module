@@ -12,7 +12,10 @@ CREATE TABLE business (
   totalReviews int,
   averageCost int,
   businessType varchar(255),
-  address varchar (255),
+  address1 varchar (255),
+  address2 varchar (255),
+  address3 varchar (255),
+  address4 varchar (255),
   phoneNumber varchar(255),
   url varchar(255)
 );
