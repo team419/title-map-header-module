@@ -1,16 +1,18 @@
 /* eslint-disable func-names */
-
 const faker = require('faker');
 const db = require('./index');
 
+// generate fake data for 100 unique businesses
 const generateBusiness = function () {
   const businesses = [];
   for (let i = 0; i < 100; i += 1) {
     const entry = {
       name: faker.company.companyName(),
       claimed: Math.floor(Math.random() * Math.floor(2)),
-      overallRating: 2.5, // fix this
-      totalReviews: 5, // fix this
+      // overallRating needs future refactor to generate dynamic rating
+      overallRating: Math.floor(Math.random() * Math.floor(5)) + 1,
+      // totalReviews needs future refactor to generate dynamic count
+      totalReviews: Math.floor(Math.random() * Math.floor(60)) + 10,
       averageCost: Math.floor(Math.random() * Math.floor(4)) + 1,
       businessType: `${faker.company.catchPhraseAdjective()}, ${faker.name.jobArea()}`,
       address1: `${faker.address.streetAddress()}`,
@@ -25,6 +27,7 @@ const generateBusiness = function () {
   return businesses;
 };
 
+// generate fake date for 7000 total reviews of the corresponding 100 businesses generated above
 const generateReviews = function () {
   const reviews = [];
   for (let i = 1; i < 7000; i += 1) {
