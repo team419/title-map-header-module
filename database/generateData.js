@@ -8,7 +8,7 @@ const generateBusiness = function () {
   for (let i = 0; i < 100; i += 1) {
     const entry = {
       name: faker.company.companyName(),
-      claimed: Math.floor(Math.random() * Math.floor(2)),
+      claimed: Math.floor(Math.random() * 2),
       // overallRating needs future refactor to generate dynamic rating
       overallRating: Math.floor(Math.random() * Math.floor(5)) + 1,
       // totalReviews needs future refactor to generate dynamic count
