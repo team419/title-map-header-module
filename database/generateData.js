@@ -1,20 +1,23 @@
-const mysql = require('mysql');
+/* eslint-disable func-names */
+// const mysql = require('mysql');
 const faker = require('faker');
-const mysqlConfig = require('./config');
+const db = require('./index');
+// const mysqlConfig = require('./config');
 
-const connection = mysql.createConnection(mysqlConfig);
+// const connection = mysql.createConnection(mysqlConfig);
 
-connection.connect((err) => {
-  if (err) {
-    console.log('mySQL connection failure');
-  } else {
-    console.log('mySQL connection success');
+// connection.connect((err) => {
+//   if (err) {
+//     console.log('mySQL connection failure');
+//     throw err;
+//   } else {
+//     console.log('mySQL connection success');
 
 
     // const connection = mysql.createConnection(mysqlConfig);
     // const connection = db.connection();
 
-    /* eslint-disable func-names */
+
     const generateBusiness = function () {
       const businesses = [];
       for (let i = 1; i < 101; i += 1) {
@@ -61,7 +64,7 @@ connection.connect((err) => {
     //   } else {
     // console.log('connected');
 
-    for (let i = 0; i < 1; i += 1) {
+    for (let i = 0; i < 100; i += 1) {
       const currentObj = businesses[i];
       console.log(currentObj);
       const queryString = `INSERT INTO business
@@ -69,23 +72,23 @@ connection.connect((err) => {
           averageCost, businessType, address1, address2,
           address3, address4, phoneNumber, url)
         VALUES
-          (${currentObj.name}), ${currentObj.claimed},
+          ("${currentObj.name}", ${currentObj.claimed},
           ${currentObj.overallRating}, ${currentObj.totalReviews},
-          ${currentObj.averageCost}, ${currentObj.businessType},
-          ${currentObj.address1}, ${currentObj.address2},
-          ${currentObj.address3}, ${currentObj.address4},
-          ${currentObj.phoneNumber}, ${currentObj.url})`;
-      connection.query(queryString, (err) => {
+          ${currentObj.averageCost}, "${currentObj.businessType}",
+          "${currentObj.address1}", "${currentObj.address2}",
+          "${currentObj.address3}", "${currentObj.address4}",
+          "${currentObj.phoneNumber}", "${currentObj.url}")`;
+      db.query(queryString, (err) => {
         if (err) {
           console.log(err);
         } else {
           console.log('inserted into business');
-          connection.end();
         }
       });
     }
-  }
-});
+    db.end();
+//   }
+// });
 
 
 //   }

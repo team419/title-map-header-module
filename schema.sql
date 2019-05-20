@@ -4,8 +4,6 @@ CREATE DATABASE title_module;
 
 USE title_module;
 
-DROP TABLE IF EXISTS business
-
 CREATE TABLE business (
   id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name varchar(255),
@@ -22,14 +20,11 @@ CREATE TABLE business (
   url varchar(255)
 );
 
-DROP TABLE IF EXISTS reviews
-
 CREATE TABLE reviews (
   id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   username varchar(255),
   text varchar(255),
   rating decimal(2, 1),
-  date date,
+  date int,
   businessId int NOT NULL
 );
-
