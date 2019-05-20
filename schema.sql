@@ -23,8 +23,8 @@ CREATE TABLE business (
 CREATE TABLE reviews (
   id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   username varchar(255),
-  text varchar(255),
+  text varchar(500),
   rating decimal(2, 1),
-  date int,
+  date varchar(150),
   businessId int NOT NULL
 );
