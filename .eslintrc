@@ -14,13 +14,7 @@
     "import"
   ],
   "rules": {
-    "comma-dangle": ["error", {
-      "arrays": "warn",
-      "objects": "warn",
-      "imports": "never",
-      "exports": "never",
-      "functions": "never"
-  }],
+    "func-names": 0,
     "react/jsx-filename-extension": 0,
     "no-unused-vars": [
       "error", {
