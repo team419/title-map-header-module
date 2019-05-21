@@ -23,7 +23,7 @@ app.get('/business', (req, res) => {
     if (err) {
       res.status(418).send();
     } else {
-      res.status(200).send(data);
+      res.status(200).send(data[0]);
     }
   });
 });

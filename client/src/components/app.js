@@ -1,8 +1,11 @@
 import React from 'react';
 import $ from 'jquery';
+import TitleLeft from './titleLeft';
+import TitleRight from './titleRight';
+import MapBox from './mapBox';
+
 
 class App extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -11,7 +14,6 @@ class App extends React.Component {
     };
     this.assignBusiness = this.assignBusiness.bind(this);
   }
-
 
   componentDidMount() {
     console.log('mounted');
@@ -22,9 +24,9 @@ class App extends React.Component {
     });
   }
 
-  consoleFunc(data) {
-    console.log(data);
-  }
+  // consoleFunc(data) {
+  //   console.log(data);
+  // }
 
   assignBusiness(data) {
     this.setState({
@@ -33,8 +35,25 @@ class App extends React.Component {
   }
 
   render() {
+    const { business } = this.state;
+    console.log('rendering');
+    if (business) {
+      return (
+        <div id="title-component">
+          <div id="content-container">
+            <div id="header">
+              <TitleLeft business={business} />
+              <TitleRight />
+            </div>
+            <div id="sub-header">
+              <MapBox business={business} />
+            </div>
+          </div>
+        </div>
+      );
+    }
     return (
-      <div id="title-name">Mount Here</div>
+      <div>Rendering</div>
     );
   }
 }

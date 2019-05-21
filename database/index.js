@@ -45,6 +45,4 @@ for (let i = 0; i < reviews.length; i += 1) {
   });
 }
 
-// db.end();
-
 module.exports = db;
