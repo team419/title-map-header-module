@@ -6,7 +6,8 @@
   "env": {
     "node": true,
     "browser": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   "plugins": [
     "react",
@@ -15,9 +16,9 @@
   ],
   "rules": {
     "func-names": 0,
-    "react/jsx-filename-extension": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "no-unused-vars": [
-      "error", {
+      "warn", {
         "vars": "local",
         "args": "none"
       }
