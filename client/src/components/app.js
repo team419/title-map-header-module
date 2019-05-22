@@ -3,6 +3,7 @@ import $ from 'jquery';
 import TitleLeft from './titleLeft';
 import TitleRight from './titleRight';
 import MapBox from './mapBox';
+import photoCarousel from '../images/photoCarousel.png';
 
 
 class App extends React.Component {
@@ -47,7 +48,7 @@ class App extends React.Component {
             </div>
             <div id="sub-header">
               <MapBox business={business} />
-              <div id="insert-photo-component-here">insert-photo-component-here</div>
+              <img id="insert-photo-component-here" alt="carousel" src={photoCarousel} />
             </div>
           </div>
         </div>
