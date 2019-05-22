@@ -47,6 +47,7 @@ class App extends React.Component {
             </div>
             <div id="sub-header">
               <MapBox business={business} />
+              <div id="insert-photo-component-here">insert-photo-component-here</div>
             </div>
           </div>
         </div>

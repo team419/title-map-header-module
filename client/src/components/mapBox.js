@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import map from '../images/map.png';
 
 const MapBox = (props) => {
   const { business } = props;
   return (
     <div id="map-box-container">
+      <img id="img-map" alt="map" src={map} />
       <ul><b>{business.addressStreet}</b></ul>
       <ul><b>{business.addressCityStateZip}</b></ul>
       <ul>{business.addressBetween}</ul>
