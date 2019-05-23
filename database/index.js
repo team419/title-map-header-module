@@ -45,4 +45,6 @@ for (let i = 0; i < reviews.length; i += 1) {
   });
 }
 
+// db.end(); // either doesn't render the page, or doesn't stop the db seeding
+
 module.exports = db;

@@ -64,8 +64,13 @@ const MapBox = (props) => {
 
 InfoItem.propTypes = {
   info: PropTypes.string.isRequired,
-  iconUrl: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
+  iconUrl: PropTypes.string,
+  link: PropTypes.string,
+};
+
+InfoItem.defaultProps = {
+  iconUrl: '',
+  link: '',
 };
 
 MapBox.propTypes = {
