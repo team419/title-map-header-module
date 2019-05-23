@@ -61,6 +61,7 @@ body {
 .title-left-entry {
   display: flex;
   align-items: baseline;
+  margin-bottom: 7px;
 }
 
 #title-left-business-name {
@@ -93,7 +94,7 @@ body {
   color: #666666;
 }
 
-#btn-details-modal {
+.btn-title-gray {
   display: flex;
   background-color: #f5f5f5;
   border-color: #CCCCCC;
@@ -112,6 +113,15 @@ body {
 svg {
   overflow: hidden;
   height: 14px;
+}
+
+#business-type {
+  /* margin-left: 6px; */
+}
+
+#dot {
+  margin: 0 6px 0 6px;
+  color: #999999;
 }
 
 /* Title Right Component */
