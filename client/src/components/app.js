@@ -17,8 +17,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log('mounted');
-
     $.get({
       url: '/business',
       success: this.assignBusiness,
@@ -41,6 +39,7 @@ class App extends React.Component {
     if (business) {
       return (
         <div id="title-component">
+          <div id="backdrop-grey" />
           <div id="content-container">
             <div id="header">
               <TitleLeft business={business} />

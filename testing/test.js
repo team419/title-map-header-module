@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+
 const pageUrl = 'http://localhost:3418/';
 
 describe('ensure testing config', () => {

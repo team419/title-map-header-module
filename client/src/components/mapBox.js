@@ -5,7 +5,9 @@ import map from '../images/map.png';
 const InfoItem = (props) => {
   const { info } = props;
   return (
-    <li className="info-item">{info}</li>
+    <div>
+      <div className="info-item">{info}</div>
+    </div>
   );
 };
 
@@ -14,28 +16,23 @@ const MapBox = (props) => {
   return (
     <div id="map-box-container">
       <img id="img-map" alt="map" src={map} />
-      <ul>
+      <ol>
         <strong><InfoItem id="info-address-street" info={business.addressStreet} /></strong>
-        {/* <li><b>{business.addressStreet}</b></li> */}
-        <li><b>{business.addressCityStateZip}</b></li>
-        <li>{business.addressBetween}</li>
-        <li>{business.addressNeighborhood}</li>
-
-        <li className="info-item ">Get Directions</li>
+        <strong><InfoItem id="address-city-state-zip" info={business.addressCityStateZip} /></strong>
+        <InfoItem id="address-between" info={business.addressBetween} />
+        <InfoItem id="address-neighborhood" info={business.addressNeighborhood} />
+        <li className="info-item"><a href="localhost:3418">Get Directions</a></li>
         <InfoItem id="info-phone-number" info={business.phoneNumber} />
-        {/* <li>{business.phoneNumber}</li> */}
-
-        <InfoItem id="info-url" info={business.url} />
-        {/* <li className="link-redirect">{business.url}</li> */}
-        <li className="info-item">Make a Reservation</li>
-        <li className="info-item">Send to your Phone</li>
-      </ul>
+        <li className="info-item"><a href="localhost:3418">{business.url}</a></li>
+        <li className="info-item"><a href="localhost:3418">Make a Reservation</a></li>
+        <li className="info-item"><a href="localhost:3418">Send to your Phone</a></li>
+      </ol>
     </div>
   );
 };
 
 InfoItem.propTypes = {
-  info: PropTypes.object.isRequired,
+  info: PropTypes.string.isRequired,
 };
 
 MapBox.propTypes = {

@@ -4,6 +4,9 @@ const faker = require('faker');
 // generate fake data for 100 unique businesses
 module.exports.generateBusiness = function (amount = 100) {
   const businesses = [];
+  const suffixes = ['St', 'Dr', 'Rd', 'Blvd', 'Ln', 'Ct'];
+  const randomSuffix = () => suffixes[Math.floor(Math.random() * 6)];
+
   for (let i = 0; i < amount; i += 1) {
     const entry = {
       name: faker.company.companyName(),
@@ -16,7 +19,7 @@ module.exports.generateBusiness = function (amount = 100) {
       businessType: `${faker.company.catchPhraseAdjective()}, ${faker.name.jobArea()}`,
       addressStreet: faker.address.streetAddress(),
       addressCityStateZip: `${faker.address.city()}, ${faker.address.stateAbbr()} ${faker.address.zipCode()}`,
-      addressBetween: `b/t ${faker.address.streetName()} ${faker.address.streetSuffix()} & ${faker.address.streetName()} ${faker.address.streetSuffix()}`,
+      addressBetween: `b/t ${faker.address.streetName()} ${randomSuffix()} & ${faker.address.streetName()} ${randomSuffix()}`,
       addressNeighborhood: faker.address.city(),
       phoneNumber: faker.phone.phoneNumber(),
       url: `${faker.lorem.word()}${faker.internet.domainWord()}.${faker.internet.domainSuffix()}`,
