@@ -9,14 +9,15 @@ module.exports.generateBusiness = function (amount = 100) {
 
   for (let i = 0; i < amount; i += 1) {
     const entry = {
-      name: faker.company.companyName(),
+      name: `${faker.commerce.product()} ${faker.commerce.productMaterial()} ${faker.company.companySuffix()}`,
       claimed: Math.floor(Math.random() * 2),
       // overallRating needs future refactor to generate dynamic rating
       overallRating: Math.floor(Math.random() * 5) + 1,
       // totalReviews needs future refactor to generate dynamic count
-      totalReviews: Math.floor(Math.random() * 60) + 10,
+      totalReviews: Math.floor(Math.random() * 225) + 10,
       averageCost: Math.floor(Math.random() * 4) + 1,
-      businessType: `${faker.company.catchPhraseAdjective()}, ${faker.name.jobArea()}`,
+      businessTypeOne: faker.company.catchPhraseAdjective(),
+      businessTypeTwo: faker.name.jobArea(),
       addressStreet: faker.address.streetAddress(),
       addressCityStateZip: `${faker.address.city()}, ${faker.address.stateAbbr()} ${faker.address.zipCode()}`,
       addressBetween: `b/t ${faker.address.streetName()} ${randomSuffix()} & ${faker.address.streetName()} ${randomSuffix()}`,
@@ -30,7 +31,7 @@ module.exports.generateBusiness = function (amount = 100) {
 };
 
 // generate fake date for 7000 total reviews of the corresponding 100 businesses generated above
-module.exports.generateReviews = function (amount = 7000) {
+module.exports.generateReviews = function (amount = 15000) {
   const reviews = [];
   for (let i = 1; i < amount; i += 1) {
     const entry = {

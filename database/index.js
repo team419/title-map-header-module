@@ -10,12 +10,12 @@ for (let i = 0; i < businesses.length; i += 1) {
   const currentObj = businesses[i];
   const queryString = `INSERT INTO business
       (name, claimed, overallRating, totalReviews,
-      averageCost, businessType, addressStreet, addressCityStateZip,
+      averageCost, businessTypeOne, businessTypeTwo, addressStreet, addressCityStateZip,
       addressBetween, addressNeighborhood, phoneNumber, url)
     VALUES
       ("${currentObj.name}", ${currentObj.claimed},
       ${currentObj.overallRating}, ${currentObj.totalReviews},
-      ${currentObj.averageCost}, "${currentObj.businessType}",
+      ${currentObj.averageCost}, "${currentObj.businessTypeOne}", "${currentObj.businessTypeTwo}",
       "${currentObj.addressStreet}", "${currentObj.addressCityStateZip}",
       "${currentObj.addressBetween}", "${currentObj.addressNeighborhood}",
       "${currentObj.phoneNumber}", "${currentObj.url}")`;

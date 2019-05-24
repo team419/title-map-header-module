@@ -9,53 +9,34 @@ body {
 
 #title-component {
   width: 100%;
-  min-width: 1060px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 1px solid #e6e6e6; */
 }
-
-/* #backdrop-grey {
-  background: #f5f5f5;
-  z-index: -1;
-  position: absolute;
-  top: -9999px;
-  right: -9999px;
-  bottom: 0;
-  left: -9999px;
-  border-bottom: 1px solid #e6e6e6;
-  overflow: hidden;
-} */
 
 #content-container {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  width: inherit;
-  min-width: 1000px;
-  height: 300px;
-  /* overflow-y: hidden; */
-  /* Need to investigate overflow syntax more */
+  min-width: 960px;
 }
 
 #header {
   display: flex;
-  /* width: 960px; */
-  height: 180px;
+  width: inherit;
+  /* height: 180px; */
 }
 
 #sub-header {
   display: flex;
+  width: inherit;
 }
 
 /* Title Left Component */
 
 #title-left {
   background-color: #f5f5f5;
-  /* background-color: #ffb8b8; */
   width: 55%;
-  /* height: 200px; */
 }
 
 .title-left-entry {
@@ -66,6 +47,8 @@ body {
 
 #title-left-business-name {
   font-size: 36px;
+  font-size: 2vw;
+  font-size-adjust: initial;
   margin: 0;
   padding-top: 6px;
 }
@@ -115,10 +98,6 @@ svg {
   height: 14px;
 }
 
-#business-type {
-  /* margin-left: 6px; */
-}
-
 #dot {
   margin: 0 6px 0 6px;
   color: #999999;
@@ -128,12 +107,10 @@ svg {
 
 #title-right {
   background-color: #f5f5f5;
-  /* background-color: rgb(201, 219, 168); */
-  /* width: 40%; */
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  /* height: 100px; */
+  width: 45%
 }
 
 
@@ -192,13 +169,11 @@ svg {
 /* Map Box */
 
 #map-box-container {
-  /* z-index: 2; */
   border: 1px solid #CCCCCC;
   display: flex;
   flex-direction: column;
   align-items: left;
-  width: 300;
-  /* height: 335px; */
+  width: 300px;
   background-color: white;
   padding: 5px;
   font-size: 14px;
@@ -207,7 +182,7 @@ svg {
 ol {
   list-style-type: none;
   margin: 5px 0 5px 0;
-  padding-left: 5px;
+  padding-left: 5px !important;
 }
 
 a {
@@ -215,14 +190,14 @@ a {
   text-decoration: none;
 }
 
-a :hov {
+a:hover {
   text-decoration: underline !important;
   text-decoration-color: #0073BB !important;
 }
 
 #map-box-image {
   border: 1px solid #CCCCCC;
-  width: 300px;
+  width: 298px;
 }
 
 .info-item {
@@ -230,7 +205,7 @@ a :hov {
 }
 
 div.info-item {
-  margin-left: 23px;
+  margin-left: 21px;
 }
 
 .info-item-icon {
@@ -244,6 +219,5 @@ img.icon {
 }
 
 #insert-photo-component-here {
-  /* width: 660px; */
   height: 336px;
 }

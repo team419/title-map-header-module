@@ -17,7 +17,7 @@ const InfoItem = (props) => {
     return (
       <div className="info-item-icon">
         <img className="icon" alt="icon" src={iconUrl} />
-        <span><a href={link}>{info}</a></span>
+        <a href={link}><span>{info}</span></a>
       </div>
     );
   }
