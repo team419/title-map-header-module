@@ -7,6 +7,13 @@ const TitleLeft = (props) => {
   const { business } = props;
   const link = 'localhost:3418';
   const comSpace = ', ';
+  const setPrice = (count) => {
+    let price = '';
+    for (let i = 0; i < count; i += 1) {
+      price += '$';
+    }
+    return price;
+  };
 
   return (
     <div className="title" id="title-left">
@@ -28,7 +35,7 @@ const TitleLeft = (props) => {
       </div>
 
       <div className="title-left-entry" id="left-entry-2">
-        <span id="average-price">$$$</span>
+        <span id="average-price">{setPrice(business.averageCost)}</span>
         <span id="dot">&#183;</span>
         <span>
           <a href={link}>{business.businessTypeOne}</a>
