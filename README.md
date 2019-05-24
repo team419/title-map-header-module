@@ -4,10 +4,9 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/team419/photo-gallery-module
+  - https://github.com/team419/comments-module
+  - https://github.com/team419/reservations-module
 
 ## Table of Contents
 
@@ -27,6 +26,7 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 - React 16.8.6
 - Express 4.16.4
 - Body Parser 1.19.0
+- MySQL 5.7.25
 
 ## Development
 
@@ -35,7 +35,9 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 From within the root directory:
 
 ```sh
+brew install mysql@5.7
 npm install -g webpack
 npm install
+npm run acorn
 ```
 

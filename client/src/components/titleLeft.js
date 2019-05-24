@@ -43,8 +43,6 @@ const TitleLeft = (props) => {
 
 TitleLeft.propTypes = {
   business: PropTypes.object.isRequired,
-  // businessTypeOne: PropTypes.string.isRequired,
-  // businessTypeTwo: PropTypes.string.isRequired,
 };
 
 export default TitleLeft;
