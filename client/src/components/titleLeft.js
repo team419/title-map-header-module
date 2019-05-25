@@ -18,7 +18,6 @@ const TitleLeft = (props) => {
 
   return (
     <div className="title" id="title-left">
-      <div className="render-test" />
       <div className="title-left-entry" id="left-entry-0">
         <h1 id="title-left-business-name">{business.name}</h1>
         <img id="icon-claimed" alt="claimed" src={iconClaimed} />
