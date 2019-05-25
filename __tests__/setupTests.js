@@ -1,7 +1,6 @@
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
-import $ from 'jquery';
 
 import App from '../client/src/components/app';
 import TitleRight from '../client/src/components/titleRight';
@@ -25,8 +24,12 @@ describe('App Component', () => {
 describe('Title Right Component', () => {
   test('Should render Title Right without throwing an error', () => {
     const wrapper = shallow(<TitleRight />);
-    console.log(wrapper);
     expect(wrapper).toHaveLength(1);
+  });
+
+  test('Should render four buttons', () => {
+    const wrapper = shallow(<TitleRight />);
+    expect(wrapper.find('button').length).toEqual(4);
   });
 });
 
