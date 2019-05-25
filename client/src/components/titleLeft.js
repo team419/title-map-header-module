@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import iconClaimed from '../images/icon-claimed.png';
 import ratingFourStar from '../images/rating-four-star.png';
 
+
 const TitleLeft = (props) => {
   const { business } = props;
   const link = 'localhost:3418';
@@ -17,6 +18,7 @@ const TitleLeft = (props) => {
 
   return (
     <div className="title" id="title-left">
+      <div className="render-test" />
       <div className="title-left-entry" id="left-entry-0">
         <h1 id="title-left-business-name">{business.name}</h1>
         <img id="icon-claimed" alt="claimed" src={iconClaimed} />

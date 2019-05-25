@@ -35,7 +35,6 @@ class App extends React.Component {
 
   render() {
     const { business } = this.state;
-    console.log('rendering');
     if (business) {
       return (
         <div id="title-component">
