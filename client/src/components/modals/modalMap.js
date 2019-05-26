@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ModalSave = (/* props */) => {
-  const message = 'I\'m a save modal!';
+const ModalMap = (/* props */) => {
+  const message = 'I\'m a map modal!';
 
   return (
-    <div className="modal" id="modal-save">
+    <div className="modal" id="modal-map">
       <div className="backdrop" />
       <div className="modal-content">
         <span className="modal-close-btn">x</span>
@@ -15,22 +15,22 @@ const ModalSave = (/* props */) => {
   );
 };
 
-ModalSave.propTypes = {
+ModalMap.propTypes = {
 
 };
 
-export default ModalSave;
+export default ModalMap;
 
-// select modal for page save
-const modalSave = document.getElementById('modal-save');
-// button to open save modal
-const modalSaveBtn = document.getElementById('btn-save');
+// select modal for page share
+const modalMap = document.getElementById('modal-map');
+// button to open share modal
+const modalMapBtn = document.getElementById('map-box-image');
 
 // generic button to close modal
 const modalCloseBtn = document.getElementsByClassName('modal-close-btn'); // returns an array, need to select
 
 // evenet listeners for modal open and close
-modalSaveBtn.addEventListener('click', modalSaveOpen);
+modalMapBtn.addEventListener('click', modalMapOpen);
 
 modalCloseBtn.addEventListener('click', modalClose);
 
