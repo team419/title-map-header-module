@@ -6,20 +6,15 @@ import App from '../client/src/components/app';
 import TitleRight from '../client/src/components/titleRight';
 import TitleLeft from '../client/src/components/titleLeft';
 import MapBox from '../client/src/components/mapBox';
+import InfoItem from '../client/src/components/infoItem';
 
 const dataMock = require('../__mocks__/dataMock');
 
 configure({ adapter: new Adapter() });
 
-describe('Test to ensure testing config', () => {
-  test('Jest configuration', () => {
-    const message = 'test run';
-    expect(message).toEqual('test run');
-  });
-});
-
 describe('App Component with disableLifecycleMethods enabled', () => {
   const wrapper = shallow(<App />, { disableLifecycleMethods: true });
+
   test('Should render App without throwing an error', () => {
     expect(wrapper).toHaveLength(1);
   });
@@ -31,6 +26,7 @@ describe('App Component with disableLifecycleMethods enabled', () => {
 
 xdescribe('App Component rendering with lifecycle methods', () => {
   const wrapper = shallow(<App />);
+
   test.skip('Should break because I haven\'t configured for jQuery support', () => {
     expect(wrapper).toHaveLength(1);
   });
@@ -50,6 +46,7 @@ describe('Title Right Component', () => {
 
 describe('Title Left Component', () => {
   const titleLeftMock = {};
+
   test('Should render Title Left component without throwing an error', () => {
     const wrapper = shallow(<TitleLeft business={titleLeftMock} />);
     expect(wrapper).toHaveLength(1);
@@ -62,7 +59,9 @@ describe('Title Left Component', () => {
 });
 
 describe('Map Box component', () => {
-  const wrapper = shallow(<MapBox business={dataMock.business} />);
+  const { business } = dataMock;
+  const wrapper = shallow(<MapBox business={business} />);
+
   test('Should render Map Box Component without throwing an error', () => {
     expect(wrapper.find('#map-box-container')).toHaveLength(1);
   });
@@ -76,4 +75,34 @@ describe('Map Box component', () => {
   });
 });
 
-// expect.addSnapshotSerializer(createSerializer({ mode: 'deep' }));
+describe('Info Item component', () => {
+  const { infoItem } = dataMock;
+
+  test('Should render a single div when only passed info', () => {
+    const wrapper = shallow(<InfoItem info={infoItem.info} />);
+    expect(wrapper.find('.info-item-entry').children()).toHaveLength(1);
+    expect(wrapper.exists('img.icon')).toEqual(false);
+    expect(wrapper.exists('span')).toEqual(false);
+    expect(wrapper.exists('a')).toEqual(false);
+  });
+
+  test('Should render a string entry with corresponding icon when passed info and icon props', () => {
+    const wrapper = shallow(<InfoItem info={infoItem.info} iconUrl={infoItem.iconUrl} />);
+    expect(wrapper.find('.info-item-entry').children()).toHaveLength(2);
+    expect(wrapper.exists('img.icon')).toEqual(true);
+    expect(wrapper.exists('span')).toEqual(true);
+    expect(wrapper.exists('a')).toEqual(false);
+  });
+
+  test('Should render a hyperlink text list entry with an accompanying icon when passed the appropriate props', () => {
+    const wrapper = shallow(<InfoItem
+      info={infoItem.info}
+      link={infoItem.link}
+      iconUrl={infoItem.iconUrl}
+    />);
+    expect(wrapper.find('.info-item-entry').children()).toHaveLength(2);
+    expect(wrapper.exists('img.icon')).toEqual(true);
+    expect(wrapper.exists('span')).toEqual(true);
+    expect(wrapper.exists('a')).toEqual(true);
+  });
+});

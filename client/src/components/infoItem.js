@@ -6,26 +6,24 @@ const InfoItem = (props) => {
     info, iconUrl, link,
   } = props;
 
-  if (link && iconUrl) {
+  if (info && link && iconUrl) {
     return (
-      <div className="info-item-icon">
+      <div className="info-item-entry">
         <img className="icon" alt="icon" src={iconUrl} />
         <a href={link}><span>{info}</span></a>
       </div>
     );
   }
-  if (iconUrl) {
+  if (info && iconUrl) {
     return (
-      <div className="info-item-icon">
+      <div className="info-item-entry">
         <img className="icon" alt="icon" src={iconUrl} />
         <span>{info}</span>
       </div>
     );
   }
   return (
-    <div>
-      <div className="info-item">{info}</div>
-    </div>
+    <div className="info-item-entry no-icon">{info}</div>
   );
 };
 

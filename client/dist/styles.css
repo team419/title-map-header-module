@@ -200,17 +200,13 @@ a:hover {
   width: 298px;
 }
 
-.info-item {
-  margin-bottom: 5px;
-}
-
-div.info-item {
+.info-item-entry.no-icon {
   margin-left: 21px;
 }
 
-.info-item-icon {
+.info-item-entry {
   display: flex;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
 }
 
 img.icon {

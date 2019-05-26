@@ -15,4 +15,10 @@ module.exports.business = {
   url: 'wingswingswings.com',
 };
 
+module.exports.infoItem = {
+  info: 'Some string string',
+  iconUrl: 'here.loc',
+  link: 'localhost:3418',
+};
+
 module.exports.reviews = {};
