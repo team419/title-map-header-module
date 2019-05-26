@@ -7,6 +7,8 @@ import TitleRight from '../client/src/components/titleRight';
 import TitleLeft from '../client/src/components/titleLeft';
 import MapBox from '../client/src/components/mapBox';
 
+const dataMock = require('../__mocks__/dataMock');
+
 configure({ adapter: new Adapter() });
 
 describe('Test to ensure testing config', () => {
@@ -60,13 +62,17 @@ describe('Title Left Component', () => {
 });
 
 describe('Map Box component', () => {
-  const wrapper = shallow(<MapBox />);
+  const wrapper = shallow(<MapBox business={dataMock.business} />);
   test('Should render Map Box Component without throwing an error', () => {
     expect(wrapper.find('#map-box-container')).toHaveLength(1);
   });
 
   test('Should render dummy google map image', () => {
     expect(wrapper.find('#map-box-image')).toHaveLength(1);
+  });
+
+  test('Should render an ordered list with nine elements', () => {
+    expect(wrapper.find('ol').children()).toHaveLength(9);
   });
 });
 

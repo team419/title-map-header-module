@@ -18,7 +18,7 @@ const TitleRight = () => (
       <strong><span>Add Photo</span></strong>
     </button>
 
-    <button type="button" className="btn-text" id="`btn-share`">
+    <button type="button" className="btn-text" id="btn-share">
       <img alt="icon" className="btn-icon" id="icon-share" src={iconShare} />
       <strong><span>Share</span></strong>
     </button>

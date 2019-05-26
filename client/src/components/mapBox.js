@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import InfoItem from './infoItem';
+
 import map from '../images/map.png';
 import iconAddress from '../images/icon-address.png';
 import iconDirections from '../images/icon-get-directions.png';
@@ -7,34 +9,6 @@ import iconPhone from '../images/icon-business-phone.png';
 import iconBusinessUrl from '../images/icon-business-url.png';
 import iconReservation from '../images/icon-reservation.png';
 import iconSendPhone from '../images/icon-send-to-phone.png';
-
-const InfoItem = (props) => {
-  const {
-    info, iconUrl, link,
-  } = props;
-
-  if (link && iconUrl) {
-    return (
-      <div className="info-item-icon">
-        <img className="icon" alt="icon" src={iconUrl} />
-        <a href={link}><span>{info}</span></a>
-      </div>
-    );
-  }
-  if (iconUrl) {
-    return (
-      <div className="info-item-icon">
-        <img className="icon" alt="icon" src={iconUrl} />
-        <span>{info}</span>
-      </div>
-    );
-  }
-  return (
-    <div>
-      <div className="info-item">{info}</div>
-    </div>
-  );
-};
 
 const MapBox = (props) => {
   const { business } = props;
@@ -60,17 +34,6 @@ const MapBox = (props) => {
       </div>
     </div>
   );
-};
-
-InfoItem.propTypes = {
-  info: PropTypes.string.isRequired,
-  iconUrl: PropTypes.string,
-  link: PropTypes.string,
-};
-
-InfoItem.defaultProps = {
-  iconUrl: '',
-  link: '',
 };
 
 MapBox.propTypes = {
