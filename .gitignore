@@ -1,6 +1,14 @@
+# packages
 node_modules
 package-lock.json
+
+# webpack bundle
 client/dist/bundle.js
+
+# images
 client/dist/3f6b6706a2a214f7fce44cb3356f86da.png
 client/dist/b0c7a01b53d78b9b921a8e16d9c6a297.png
 client/src/images/
+
+# testing coverage reports
+__tests__/coverage

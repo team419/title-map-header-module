@@ -23,10 +23,6 @@ class App extends React.Component {
     });
   }
 
-  // consoleFunc(data) {
-  //   console.log(data);
-  // }
-
   assignBusiness(data) {
     this.setState({
       business: data,

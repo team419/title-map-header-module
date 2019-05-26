@@ -45,15 +45,15 @@ describe('Title Right Component', () => {
 });
 
 describe('Title Left Component', () => {
-  const titleLeftMock = {};
+  const { business } = dataMock;
 
   test('Should render Title Left component without throwing an error', () => {
-    const wrapper = shallow(<TitleLeft business={titleLeftMock} />);
-    expect(wrapper.exist('#title-left')).toEqual(true);
+    const wrapper = shallow(<TitleLeft business={business} />);
+    expect(wrapper.exists('#title-left')).toEqual(true);
   });
 
   test('Should render three parent list entry items', () => {
-    const wrapper = shallow(<TitleLeft business={titleLeftMock} />);
+    const wrapper = shallow(<TitleLeft business={business} />);
     expect(wrapper.find('.title-left-entry')).toHaveLength(3);
   });
 });
