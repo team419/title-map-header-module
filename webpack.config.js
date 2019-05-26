@@ -1,5 +1,7 @@
+const path = require('path');
+
 module.exports = {
-  entry: __dirname + '/client/src/index.js',
+  entry: path.join(__dirname, '/client/src/index.js'),
   module: {
     rules: [
       {
@@ -8,14 +10,20 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-react', '@babel/preset-env']
-          }
-        }
-      }
-    ]
+            presets: ['@babel/preset-react', '@babel/preset-env'],
+          },
+        },
+      }, {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
+      }, {
+        test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+        loader: 'url-loader?limit=100000',
+      },
+    ],
   },
-   output: {
+  output: {
     filename: 'bundle.js',
-    path: __dirname + '/client/dist'
-  }
+    path: path.join(__dirname, '/client/dist'),
+  },
 };
