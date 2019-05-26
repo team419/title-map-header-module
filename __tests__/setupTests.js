@@ -49,7 +49,7 @@ describe('Title Left Component', () => {
 
   test('Should render Title Left component without throwing an error', () => {
     const wrapper = shallow(<TitleLeft business={titleLeftMock} />);
-    expect(wrapper).toHaveLength(1);
+    expect(wrapper.exist('#title-left')).toEqual(true);
   });
 
   test('Should render three parent list entry items', () => {
@@ -63,14 +63,15 @@ describe('Map Box component', () => {
   const wrapper = shallow(<MapBox business={business} />);
 
   test('Should render Map Box Component without throwing an error', () => {
-    expect(wrapper.find('#map-box-container')).toHaveLength(1);
+    expect(wrapper.exists('#map-box-container')).toEqual(true);
   });
 
   test('Should render dummy google map image', () => {
-    expect(wrapper.find('#map-box-image')).toHaveLength(1);
+    expect(wrapper.exists('#map-box-image')).toEqual(true);
   });
 
   test('Should render an ordered list with nine elements', () => {
+    expect(wrapper.exists('ol')).toEqual(true);
     expect(wrapper.find('ol').children()).toHaveLength(9);
   });
 });

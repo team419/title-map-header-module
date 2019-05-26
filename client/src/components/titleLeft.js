@@ -18,13 +18,13 @@ const TitleLeft = (props) => {
 
   return (
     <div className="title" id="title-left">
-      <div className="title-left-entry" id="left-entry-0">
+      <div className="title-left-entry">
         <h1 id="title-left-business-name">{business.name}</h1>
         <img id="icon-claimed" alt="claimed" src={iconClaimed} />
         <span id="title-business-claimed">Claimed</span>
       </div>
 
-      <div className="title-left-entry" id="left-entry-1">
+      <div className="title-left-entry">
         <img alt="rating" id="img-rating" src={ratingFourStar} />
         <span id="review-count">{`${business.totalReviews} reviews`}</span>
         <button type="button" className="btn-title-gray" id="btn-details-modal">
@@ -35,7 +35,7 @@ const TitleLeft = (props) => {
         </button>
       </div>
 
-      <div className="title-left-entry" id="left-entry-2">
+      <div className="title-left-entry">
         <span id="average-price">{setPrice(business.averageCost)}</span>
         <span id="dot">&#183;</span>
         <span>
