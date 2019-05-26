@@ -5,25 +5,32 @@ import React from 'react';
 import App from '../client/src/components/app';
 import TitleRight from '../client/src/components/titleRight';
 import TitleLeft from '../client/src/components/titleLeft';
+import MapBox from '../client/src/components/mapBox';
 
 configure({ adapter: new Adapter() });
 
-describe('ensure testing config', () => {
-  test('jest config', () => {
+describe('Test to ensure testing config', () => {
+  test('Jest configuration', () => {
     const message = 'test run';
     expect(message).toEqual('test run');
   });
 });
 
-describe('App Component', () => {
+describe('App Component with disableLifecycleMethods enabled', () => {
   const wrapper = shallow(<App />, { disableLifecycleMethods: true });
-
   test('Should render App without throwing an error', () => {
     expect(wrapper).toHaveLength(1);
   });
 
-  test('Should render placeholding photo carousel on main page', () => {
-    expect(wrapper.find('#insert-photo-component-here')).toHaveLength(1);
+  test('Should render single \'rendering\' element before componentDidMount is called', () => {
+    expect(wrapper.contains(<div>Rendering</div>)).toEqual(true);
+  });
+});
+
+xdescribe('App Component rendering with lifecycle methods', () => {
+  const wrapper = shallow(<App />);
+  test.skip('Should break because I haven\'t configured for jQuery support', () => {
+    expect(wrapper).toHaveLength(1);
   });
 });
 
@@ -49,6 +56,17 @@ describe('Title Left Component', () => {
   test('Should render three parent list entry items', () => {
     const wrapper = shallow(<TitleLeft business={titleLeftMock} />);
     expect(wrapper.find('.title-left-entry')).toHaveLength(3);
+  });
+});
+
+describe('Map Box component', () => {
+  const wrapper = shallow(<MapBox />);
+  test('Should render Map Box Component without throwing an error', () => {
+    expect(wrapper.find('#map-box-container')).toHaveLength(1);
+  });
+
+  test('Should render dummy google map image', () => {
+    expect(wrapper.find('#map-box-image')).toHaveLength(1);
   });
 });
 

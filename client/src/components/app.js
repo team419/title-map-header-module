@@ -7,8 +7,8 @@ import photoCarousel from '../images/photoCarousel.png';
 
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       business: null,

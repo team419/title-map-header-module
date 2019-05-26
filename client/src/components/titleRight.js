@@ -12,14 +12,17 @@ const TitleRight = () => (
         <span>Write a Review</span>
       </strong>
     </button>
+
     <button type="button" className="btn-text" id="btn-photo">
       <img alt="icon" className="btn-icon" id="icon-add-img" src={iconAddPhoto} />
       <strong><span>Add Photo</span></strong>
     </button>
+
     <button type="button" className="btn-text" id="`btn-share`">
       <img alt="icon" className="btn-icon" id="icon-share" src={iconShare} />
       <strong><span>Share</span></strong>
     </button>
+
     <button type="button" className="btn-text" id="btn-save">
       <img alt="icon" className="btn-icon" id="icon-save" src={iconSave} />
       <strong><span>Save</span></strong>
