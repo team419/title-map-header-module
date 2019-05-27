@@ -3,7 +3,9 @@ import $ from 'jquery';
 import TitleLeft from './titleLeft';
 import TitleRight from './titleRight';
 import MapBox from './mapBox';
+import ModalShare from './modals/modalShare';
 import photoCarousel from '../images/photoCarousel.png';
+import Modal from './modals/modal';
 
 
 class App extends React.Component {
@@ -12,8 +14,10 @@ class App extends React.Component {
 
     this.state = {
       business: null,
+      showModal: false,
     };
     this.assignBusiness = this.assignBusiness.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
   componentDidMount() {
@@ -29,16 +33,25 @@ class App extends React.Component {
     });
   }
 
+  toggleModal() {
+    const { showModal } = this.state;
+    this.setState({
+      showModal: !showModal,
+    });
+  }
+
   render() {
-    const { business } = this.state;
+    const { business, showModal } = this.state;
+
     if (business) {
       return (
         <div id="title-component">
+          <Modal toggleModal={this.toggleModal} modalClass="modal-share" showModal={showModal} content={<ModalShare />} />
           <div id="backdrop-grey" />
           <div id="content-container">
             <div id="header">
               <TitleLeft business={business} />
-              <TitleRight />
+              <TitleRight toggleModal={this.toggleModal} />
             </div>
             <div id="sub-header">
               <MapBox business={business} />

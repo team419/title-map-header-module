@@ -5,34 +5,31 @@ const ModalShare = (/* props */) => {
   const message = 'I\'m a share modal!';
 
   return (
-    <div className="modal" id="modal-share">
-      <div className="backdrop" />
-      <div className="modal-content">
-        <span className="modal-close-btn">x</span>
-        {message}
-      </div>
+    <div>
+      {message}
     </div>
   );
 };
 
-ModalShare.propTypes = {
+// ModalShare.propTypes = {
 
-};
+// };
 
 export default ModalShare;
 
-// select modal for page share
-const modalShare = document.getElementById('modal-share');
-// button to open share modal
-const modalShareBtn = document.getElementById('btn-share');
+// // select modal for page share
+// const modalShare = document.getElementById('modal-share');
+// // button to open share modal
+// const modalShareBtn = document.getElementById('btn-share');
 
-// generic button to close modal
-const modalCloseBtn = document.getElementsByClassName('modal-close-btn'); // returns an array, need to select
+// // generic button to close modal
+// const modalCloseBtn = document.getElementsByClassName('modal-close-btn');
+// returns an array, need to select
 
-// evenet listeners for modal open and close
-modalShareBtn.addEventListener('click', modalShareOpen);
+// // evenet listeners for modal open and close
+// modalShareBtn.addEventListener('click', modalShareOpen);
 
-modalCloseBtn.addEventListener('click', modalClose);
+// modalCloseBtn.addEventListener('click', modalClose);
 
-// event listener to close modal with outside click
-window.addEventListener('click', modalClose);
+// // event listener to close modal with outside click
+// window.addEventListener('click', modalClose);
