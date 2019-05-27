@@ -24,7 +24,7 @@ const TitleLeft = (props) => {
         <span id="title-business-claimed">Claimed</span>
       </div>
 
-      <div className="title-left-entry">
+      <div className="title-left-entry left-entry-1">
         <img alt="rating" id="img-rating" src={ratingFourStar} />
         <span id="review-count">{`${business.totalReviews} reviews`}</span>
         <button type="button" className="btn-title-gray" onClick={toggleModalDetails}>
