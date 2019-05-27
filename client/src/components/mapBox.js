@@ -1,3 +1,7 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import InfoItem from './infoItem';
@@ -11,14 +15,15 @@ import iconReservation from '../images/icon-reservation.png';
 import iconSendPhone from '../images/icon-send-to-phone.png';
 
 const MapBox = (props) => {
-  const { business, toggleModal } = props;
+  const { business, toggleModalMap, toggleModalSend } = props;
   const directions = 'Get Directions';
   const reservation = 'Make a Reservation';
   const send = 'Send to your Phone';
   const link = 'localhost:3418';
   return (
     <div id="map-box-container">
-      <img id="map-box-image" alt="map" src={map} onClick={toggleModal} />
+      {/* disabled some linting errors here - see above */}
+      <img id="map-box-image" alt="map" src={map} onClick={toggleModalMap} />
       <div id="map-box-text">
         <ol>
           <strong><InfoItem info={business.addressStreet} iconUrl={iconAddress} /></strong>
@@ -29,7 +34,9 @@ const MapBox = (props) => {
           <InfoItem info={business.phoneNumber} iconUrl={iconPhone} />
           <InfoItem info={business.url} iconUrl={iconBusinessUrl} link={link} />
           <InfoItem info={reservation} iconUrl={iconReservation} link={link} />
-          <InfoItem info={send} iconUrl={iconSendPhone} link={link} />
+          <div onClick={toggleModalSend}>
+            <InfoItem info={send} iconUrl={iconSendPhone} link={link} />
+          </div>
         </ol>
       </div>
     </div>
@@ -38,7 +45,8 @@ const MapBox = (props) => {
 
 MapBox.propTypes = {
   business: PropTypes.object.isRequired,
-  toggleModal: PropTypes.func.isRequired,
+  toggleModalMap: PropTypes.func.isRequired,
+  toggleModalSend: PropTypes.func.isRequired,
 };
 
 export default MapBox;

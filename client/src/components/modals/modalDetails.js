@@ -1,14 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import imgDetailsModal from '../../images/img-details-modal.png';
 
-const ModalDetails = (/* props */) => {
-  const message = 'I\'m the details modal!';
+// Need refactor to handle dynamic details modal
+// import PropTypes from 'prop-types';
 
-  return (
-    <span>{message}</span>
-  );
-};
+const ModalDetails = (/* props */) => (
+  <img alt="modal-details" className="modal-details" src={imgDetailsModal} />
+);
 
+// need to refactor for dynamic review details
 ModalDetails.propTypes = {
 
 };
