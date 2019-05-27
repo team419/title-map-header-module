@@ -28,7 +28,7 @@ const TitleRight = (props) => {
         <strong><span>Share</span></strong>
       </button>
 
-      <button type="button" className="btn-text" id="btn-save">
+      <button type="button" className="btn-text" id="btn-save" onClick={toggleModal}>
         <img alt="icon" className="btn-icon" id="icon-save" src={iconSave} />
         <strong><span>Save</span></strong>
       </button>

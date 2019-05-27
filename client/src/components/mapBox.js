@@ -11,14 +11,14 @@ import iconReservation from '../images/icon-reservation.png';
 import iconSendPhone from '../images/icon-send-to-phone.png';
 
 const MapBox = (props) => {
-  const { business } = props;
+  const { business, toggleModal } = props;
   const directions = 'Get Directions';
   const reservation = 'Make a Reservation';
   const send = 'Send to your Phone';
   const link = 'localhost:3418';
   return (
     <div id="map-box-container">
-      <img id="map-box-image" alt="map" src={map} />
+      <img id="map-box-image" alt="map" src={map} onClick={toggleModal} />
       <div id="map-box-text">
         <ol>
           <strong><InfoItem info={business.addressStreet} iconUrl={iconAddress} /></strong>
@@ -38,6 +38,7 @@ const MapBox = (props) => {
 
 MapBox.propTypes = {
   business: PropTypes.object.isRequired,
+  toggleModal: PropTypes.func.isRequired,
 };
 
 export default MapBox;

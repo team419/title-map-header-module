@@ -3,10 +3,12 @@ import $ from 'jquery';
 import TitleLeft from './titleLeft';
 import TitleRight from './titleRight';
 import MapBox from './mapBox';
-import ModalShare from './modals/modalShare';
-import photoCarousel from '../images/photoCarousel.png';
 import Modal from './modals/modal';
+import ModalShare from './modals/modalShare';
+import ModalSave from './modals/modalSave';
+import ModalMap from './modals/modalMap';
 
+import photoCarousel from '../images/photoCarousel.png';
 
 class App extends React.Component {
   constructor() {
@@ -46,7 +48,9 @@ class App extends React.Component {
     if (business) {
       return (
         <div id="title-component">
-          <Modal toggleModal={this.toggleModal} modalClass="modal-share" showModal={showModal} content={<ModalShare />} />
+          {/* <Modal toggleModal={this.toggleModal} modalClass="modal-share" showModal={showModal} content={<ModalShare />} /> */}
+          {/* <Modal toggleModal={this.toggleModal} modalClass="modal-save" showModal={showModal} content={<ModalSave />} /> */}
+          <Modal toggleModal={this.toggleModal} modalClass="modal-map" showModal={showModal} content={<ModalMap />} />
           <div id="backdrop-grey" />
           <div id="content-container">
             <div id="header">
@@ -54,7 +58,7 @@ class App extends React.Component {
               <TitleRight toggleModal={this.toggleModal} />
             </div>
             <div id="sub-header">
-              <MapBox business={business} />
+              <MapBox business={business} toggleModal={this.toggleModal} />
               <img id="insert-photo-component-here" alt="carousel" src={photoCarousel} />
             </div>
           </div>
