@@ -3,21 +3,25 @@ import PropTypes from 'prop-types';
 
 const InfoItem = (props) => {
   const {
-    info, iconUrl, link,
+    info, pngPath, link,
   } = props;
 
-  if (info && link && iconUrl) {
+  if (info && link && pngPath) {
     return (
       <div className="info-item-entry">
-        <img className="icon" alt="icon" src={iconUrl} />
+        <svg role="img" className="icon-svg" viewBox="0 0 18 18">
+          <path d={pngPath} />
+        </svg>
         <a href={link}><span>{info}</span></a>
       </div>
     );
   }
-  if (info && iconUrl) {
+  if (info && pngPath) {
     return (
       <div className="info-item-entry">
-        <img className="icon" alt="icon" src={iconUrl} />
+        <svg role="img" className="icon-svg" viewBox="0 0 18 18">
+          <path d={pngPath} />
+        </svg>
         <span>{info}</span>
       </div>
     );
@@ -29,12 +33,12 @@ const InfoItem = (props) => {
 
 InfoItem.propTypes = {
   info: PropTypes.string.isRequired,
-  iconUrl: PropTypes.string,
+  pngPath: PropTypes.string,
   link: PropTypes.string,
 };
 
 InfoItem.defaultProps = {
-  iconUrl: '',
+  pngPath: '',
   link: '',
 };
 
