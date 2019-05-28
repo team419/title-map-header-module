@@ -13,7 +13,7 @@ client/dist/e2b98c08ebce8c418555b12f74467e53.png
 client/dist/3298adda83da1e18cdf8dc29690db496.png
 client/dist/95bbfe31f7377d5ea03f24db81181aba.png
 client/dist/ebc44755c545745909646946357d5b00.png
-client/src/images/
+client/src/images/imgIgnore
 
 # testing coverage reports
 __tests__/coverage

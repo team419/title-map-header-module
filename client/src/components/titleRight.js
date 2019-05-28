@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import iconRedStar from '../images/icon-red-star.png';
-import iconAddPhoto from '../images/icon-add-photo.png';
-import iconShare from '../images/icon-share.png';
-import iconSave from '../images/icon-save.png';
+import iconRedStar from '../images/imgIgnore/icon-red-star.png';
+import iconAddPhoto from '../images/imgIgnore/icon-add-photo.png';
+import iconShare from '../images/imgIgnore/icon-share.png';
+import iconSave from '../images/imgIgnore/icon-save.png';
 
 const TitleRight = (props) => {
   // refactor needed here to use single toggleModal function

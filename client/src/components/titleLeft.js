@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import iconClaimed from '../images/icon-claimed.png';
+import iconClaimed from '../images/imgIgnore/icon-claimed.png';
 import ratingFourStar from '../images/rating-four-star.png';
 
 

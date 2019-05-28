@@ -7,12 +7,12 @@ import PropTypes from 'prop-types';
 import InfoItem from './infoItem';
 
 import map from '../images/map.png';
-import iconAddress from '../images/icon-address.png';
-import iconDirections from '../images/icon-get-directions.png';
-import iconPhone from '../images/icon-business-phone.png';
-import iconBusinessUrl from '../images/icon-business-url.png';
-import iconReservation from '../images/icon-reservation.png';
-import iconSendPhone from '../images/icon-send-to-phone.png';
+import iconAddress from '../images/imgIgnore/icon-address.png';
+import iconDirections from '../images/imgIgnore/icon-get-directions.png';
+import iconPhone from '../images/imgIgnore/icon-business-phone.png';
+import iconBusinessUrl from '../images/imgIgnore/icon-business-url.png';
+import iconReservation from '../images/imgIgnore/icon-reservation.png';
+import iconSendPhone from '../images/imgIgnore/icon-send-to-phone.png';
 
 const MapBox = (props) => {
   const { business, toggleModalMap, toggleModalSend } = props;
