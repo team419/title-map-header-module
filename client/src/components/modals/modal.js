@@ -8,13 +8,13 @@ const Modal = (props) => {
     showModal,
     content,
   } = props;
-  // onKeyDown={toggleModal} role="button" tabIndex="0"
+
   return (
     <div className={`modal ${modalClass}`} style={{ display: showModal ? 'block' : 'none' }}>
-      <div className="backdrop" onClick={toggleModal} />
-      <div className="modal-content">
+      <div className="backdrop" onClick={toggleModal} onKeyDown={toggleModal} role="button" tabIndex="0" />
+      <div className={`modal-content ${modalClass}`}>
         {content}
-        <span className="modal-close-btn">x</span>
+        {/* <span className="modal-close-btn">x</span> */}
       </div>
     </div>
   );

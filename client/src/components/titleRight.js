@@ -7,7 +7,10 @@ import iconShare from '../images/icon-share.png';
 import iconSave from '../images/icon-save.png';
 
 const TitleRight = (props) => {
-  const { toggleModal } = props;
+  // refactor needed here to use single toggleModal function
+  // const { toggleModal } = props;
+
+  const { toggleModalShare, toggleModalSave } = props;
 
   return (
     <div className="title" id="title-right">
@@ -23,12 +26,14 @@ const TitleRight = (props) => {
         <strong><span>Add Photo</span></strong>
       </button>
 
-      <button type="button" className="btn-text" id="btn-share" onClick={toggleModal}>
+      {/* need refactor for reusable toggleModal */}
+      <button type="button" className="btn-text" id="btn-share" onClick={toggleModalShare}>
         <img alt="icon" className="btn-icon" id="icon-share" src={iconShare} />
         <strong><span>Share</span></strong>
       </button>
 
-      <button type="button" className="btn-text" id="btn-save">
+      {/* need refactor for reusable toggleModal */}
+      <button type="button" className="btn-text" id="btn-save" onClick={toggleModalSave}>
         <img alt="icon" className="btn-icon" id="icon-save" src={iconSave} />
         <strong><span>Save</span></strong>
       </button>
@@ -37,7 +42,10 @@ const TitleRight = (props) => {
 };
 
 TitleRight.propTypes = {
-  toggleModal: PropTypes.func.isRequired,
+  // need refactor here
+  // toggleModal: PropTypes.func.isRequired,
+  toggleModalShare: PropTypes.func.isRequired,
+  toggleModalSave: PropTypes.func.isRequired,
 };
 
 export default TitleRight;

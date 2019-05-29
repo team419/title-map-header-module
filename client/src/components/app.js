@@ -3,10 +3,15 @@ import $ from 'jquery';
 import TitleLeft from './titleLeft';
 import TitleRight from './titleRight';
 import MapBox from './mapBox';
-import ModalShare from './modals/modalShare';
-import photoCarousel from '../images/photoCarousel.png';
 import Modal from './modals/modal';
+import ModalShare from './modals/modalShare';
+import ModalSave from './modals/modalSave';
+import ModalMap from './modals/modalMap';
+import ModalDetails from './modals/modalDetails';
+import ModalSend from './modals/modalSend';
 
+import photoCarousel from '../images/photoCarousel.png';
+import yelpHeader from '../images/img-yelp-header.png';
 
 class App extends React.Component {
   constructor() {
@@ -14,10 +19,20 @@ class App extends React.Component {
 
     this.state = {
       business: null,
-      showModal: false,
+      // showModal: false,
+      showModalDetails: false,
+      showModalShare: false,
+      showModalSave: false,
+      showModalMap: false,
+      showModalSend: false,
     };
     this.assignBusiness = this.assignBusiness.bind(this);
-    this.toggleModal = this.toggleModal.bind(this);
+    // this.toggleModal = this.toggleModal.bind(this);
+    this.toggleModalDetails = this.toggleModalDetails.bind(this);
+    this.toggleModalShare = this.toggleModalShare.bind(this);
+    this.toggleModalSave = this.toggleModalSave.bind(this);
+    this.toggleModalMap = this.toggleModalMap.bind(this);
+    this.toggleModalSend = this.toggleModalSend.bind(this);
   }
 
   componentDidMount() {
@@ -33,31 +48,96 @@ class App extends React.Component {
     });
   }
 
-  toggleModal() {
-    const { showModal } = this.state;
+  // toggleModal() {
+  //   const { showModal } = this.state;
+  //   this.setState({
+  //     showModal: !showModal,
+  //   });
+  // }
+
+  // Need major refactor to use a single toggleModal function across all modals
+  // Possible make event listeners to ensure when a triggering element is clicked,
+  // that only the proper modal will be toggled.
+
+  toggleModalDetails() {
+    const { showModalDetails } = this.state;
     this.setState({
-      showModal: !showModal,
+      showModalDetails: !showModalDetails,
+    });
+  }
+
+  toggleModalShare() {
+    const { showModalShare } = this.state;
+    this.setState({
+      showModalShare: !showModalShare,
+    });
+  }
+
+  toggleModalSave() {
+    const { showModalSave } = this.state;
+    this.setState({
+      showModalSave: !showModalSave,
+    });
+  }
+
+  toggleModalMap() {
+    const { showModalMap } = this.state;
+    this.setState({
+      showModalMap: !showModalMap,
+    });
+  }
+
+  toggleModalSend() {
+    const { showModalSend } = this.state;
+    this.setState({
+      showModalSend: !showModalSend,
     });
   }
 
   render() {
-    const { business, showModal } = this.state;
+    const {
+      business,
+      // showModal,
+      showModalDetails,
+      showModalShare,
+      showModalSave,
+      showModalMap,
+      showModalSend,
+    } = this.state;
 
     if (business) {
       return (
         <div id="title-component">
-          <Modal toggleModal={this.toggleModal} modalClass="modal-share" showModal={showModal} content={<ModalShare />} />
+          <img alt="yelp-header" id="yelp-header" src={yelpHeader} />
           <div id="backdrop-grey" />
           <div id="content-container">
             <div id="header">
-              <TitleLeft business={business} />
-              <TitleRight toggleModal={this.toggleModal} />
+              {/* refactor needed */}
+              <TitleLeft
+                business={business}
+                toggleModalDetails={this.toggleModalDetails}
+              />
+              <TitleRight
+                toggleModalShare={this.toggleModalShare}
+                toggleModalSave={this.toggleModalSave}
+              />
             </div>
             <div id="sub-header">
-              <MapBox business={business} />
+              {/* refactor needed */}
+              <MapBox
+                business={business}
+                toggleModalMap={this.toggleModalMap}
+                toggleModalSend={this.toggleModalSend}
+              />
               <img id="insert-photo-component-here" alt="carousel" src={photoCarousel} />
             </div>
           </div>
+          {/* Need to refactor modal props for reusable toggleModal function */}
+          <Modal toggleModal={this.toggleModalDetails} modalClass="modal-details" showModal={showModalDetails} content={<ModalDetails />} />
+          <Modal toggleModal={this.toggleModalShare} modalClass="modal-share" showModal={showModalShare} content={<ModalShare />} />
+          <Modal toggleModal={this.toggleModalSave} modalClass="modal-save" showModal={showModalSave} content={<ModalSave />} />
+          <Modal toggleModal={this.toggleModalMap} modalClass="modal-map" showModal={showModalMap} content={<ModalMap />} />
+          <Modal toggleModal={this.toggleModalSend} modalClass="modal-send" showModal={showModalSend} content={<ModalSend />} />
         </div>
       );
     }
