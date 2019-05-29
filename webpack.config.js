@@ -13,11 +13,24 @@ module.exports = {
             presets: ['@babel/preset-react', '@babel/preset-env'],
           },
         },
-      }, {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      }, {
-        test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[sha1:hash:hex:7]',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png)(\?[a-z0-9=.]+)?$/,
         loader: 'url-loader',
         options: {
           limit: 100000,

@@ -7,7 +7,7 @@ const db = require('../database/index');
 const port = 3418;
 const app = express();
 
-app.use(express.static(path.join(__dirname, '/../client/dist/')));
+app.use(express.static(path.join(__dirname, '../client/dist/')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
