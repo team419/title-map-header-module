@@ -82,15 +82,15 @@ describe('Info Item component', () => {
   test('Should render a single div when only passed info', () => {
     const wrapper = shallow(<InfoItem info={infoItem.info} />);
     expect(wrapper.find('.info-item-entry').children()).toHaveLength(1);
-    expect(wrapper.exists('img.icon')).toEqual(false);
+    expect(wrapper.exists('svg.svg-generic')).toEqual(false);
     expect(wrapper.exists('span')).toEqual(false);
     expect(wrapper.exists('a')).toEqual(false);
   });
 
-  test('Should render a string entry with corresponding icon when passed info and icon props', () => {
-    const wrapper = shallow(<InfoItem info={infoItem.info} iconUrl={infoItem.iconUrl} />);
+  test('Should render a string entry with corresponding png icon when passed info and icon props', () => {
+    const wrapper = shallow(<InfoItem info={infoItem.info} pngPath={infoItem.png} />);
     expect(wrapper.find('.info-item-entry').children()).toHaveLength(2);
-    expect(wrapper.exists('img.icon')).toEqual(true);
+    expect(wrapper.exists('svg.svg-generic')).toEqual(true);
     expect(wrapper.exists('span')).toEqual(true);
     expect(wrapper.exists('a')).toEqual(false);
   });
@@ -99,10 +99,10 @@ describe('Info Item component', () => {
     const wrapper = shallow(<InfoItem
       info={infoItem.info}
       link={infoItem.link}
-      iconUrl={infoItem.iconUrl}
+      pngPath={infoItem.png}
     />);
     expect(wrapper.find('.info-item-entry').children()).toHaveLength(2);
-    expect(wrapper.exists('img.icon')).toEqual(true);
+    expect(wrapper.exists('svg.svg-generic')).toEqual(true);
     expect(wrapper.exists('span')).toEqual(true);
     expect(wrapper.exists('a')).toEqual(true);
   });
