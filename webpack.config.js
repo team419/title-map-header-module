@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.join(__dirname, '/client/src/index.js'),
+  entry: path.join(__dirname, '/client/src/index'),
   module: {
     rules: [
       {
@@ -24,7 +24,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: '[sha1:hash:hex:7]',
+              localIdentName: '[local]-[sha1:hash:hex:7]',
             },
           },
         ],

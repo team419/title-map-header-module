@@ -5,6 +5,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import InfoItem from './infoItem';
+import css from '../../dist/styles.css';
 
 import map from '../images/map.png';
 
@@ -28,7 +29,7 @@ const MapBox = (props) => {
     <div id="map-box-container">
       <img id="map-box-image" alt="map" src={map} onClick={toggleModalMap} />
       <div id="map-box-text">
-        <ol className="map-box-list">
+        <ol className={css['map-box-list']}>
           <strong><InfoItem info={business.addressStreet} pngPath={png.address} /></strong>
           <strong><InfoItem info={business.addressCityStateZip} /></strong>
           <InfoItem info={business.addressBetween} />

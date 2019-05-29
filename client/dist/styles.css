@@ -30,7 +30,7 @@
   min-width: 960px;
 }
 
-#header {
+#header-component {
   display: flex;
   width: inherit;
 }
@@ -285,7 +285,11 @@ img.icon {
   cursor: pointer;
 }
 
-.modal-img {
+.modal-share {
+  width: 100%;
+}
+
+.modal-save {
   width: 100%;
 }
 

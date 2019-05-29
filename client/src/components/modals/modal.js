@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import css from '../../../dist/styles.css';
 
 // Need refactor to dynamic rendering of modals
 // possibly set all modals to this single file, and only ever display the relevant one
@@ -15,11 +16,11 @@ const Modal = (props) => {
   } = props;
 
   return (
-    <div className={`modal ${modalClass}`} style={{ display: showModal ? 'block' : 'none' }}>
-      <div className="backdrop" onClick={toggleModal} onKeyDown={toggleModal} role="button" tabIndex="0" />
-      <div className={`modal-content ${modalClass}`}>
+    <div className={`${css.modal} ${css[modalClass]}`} style={{ display: showModal ? 'block' : 'none' }}>
+      <div className={css.backdrop} onClick={toggleModal} onKeyDown={toggleModal} role="button" tabIndex="0" />
+      <div className={`${css['modal-content']} ${css[modalClass]}`}>
         {content}
-        {/* <span className="modal-close-btn">x</span> */}
+        {/* <span className={css['modal-close-btn']}>x</span> */}
       </div>
     </div>
   );
