@@ -28,7 +28,7 @@ const MapBox = (props) => {
     <div id="map-box-container">
       <img id="map-box-image" alt="map" src={map} onClick={toggleModalMap} />
       <div id="map-box-text">
-        <ol>
+        <ol className="map-box-list">
           <strong><InfoItem info={business.addressStreet} pngPath={png.address} /></strong>
           <strong><InfoItem info={business.addressCityStateZip} /></strong>
           <InfoItem info={business.addressBetween} />

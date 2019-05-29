@@ -19,8 +19,7 @@ const TitleLeft = (props) => {
     <div className="title" id="title-left">
       <div className="title-left-entry">
         <h1 id="title-left-business-name">{business.name}</h1>
-        {/* <img id="icon-claimed" alt="claimed" src={iconClaimed} /> */}
-        <svg role="img" className="icon-svg" id="svg-histogram" viewBox="0 0 18 18">
+        <svg role="img" className="svg-generic" id="svg-claimed" viewBox="0 0 18 18">
           <path d="M 9 1 a 8 8 0 1 0 0 16 A 8 8 0 0 0 9 1 Z m 3.96 6.28 l -4.808 4.807 l -3.112 -3.11 a 0.8 0.8 0 1 1 1.13 -1.132 l 1.982 1.98 l 3.677 -3.677 a 0.8 0.8 0 1 1 1.13 1.13 Z" />
         </svg>
         <span id="title-business-claimed">Claimed</span>
@@ -41,9 +40,9 @@ const TitleLeft = (props) => {
         <span id="average-price">{setPrice(business.averageCost)}</span>
         <span id="dot">&#183;</span>
         <span>
-          <a href={link}>{business.businessTypeOne}</a>
+          <a className="anchor-link" href={link}>{business.businessTypeOne}</a>
           {comSpace}
-          <a href={link}>{business.businessTypeTwo}</a>
+          <a className="anchor-link" href={link}>{business.businessTypeTwo}</a>
         </span>
         <button type="button" className="btn-title-gray">Edit</button>
       </div>

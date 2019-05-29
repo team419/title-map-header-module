@@ -9,17 +9,17 @@ const InfoItem = (props) => {
   if (info && link && pngPath) {
     return (
       <div className="info-item-entry">
-        <svg role="img" className="icon-svg" viewBox="0 0 18 18">
+        <svg role="img" className="icon-svg svg-generic" viewBox="0 0 18 18">
           <path d={pngPath} />
         </svg>
-        <a href={link}><span>{info}</span></a>
+        <a className="anchor-link" href={link}><span>{info}</span></a>
       </div>
     );
   }
   if (info && pngPath) {
     return (
       <div className="info-item-entry">
-        <svg role="img" className="icon-svg" viewBox="0 0 18 18">
+        <svg role="img" className="icon-svg svg-generic" viewBox="0 0 18 18">
           <path d={pngPath} />
         </svg>
         <span>{info}</span>

@@ -108,7 +108,7 @@ class App extends React.Component {
     if (business) {
       return (
         <div id="title-component">
-          <img alt="yelp-header" id="yelp-header" src={yelpHeader} />
+          {/* <img alt="yelp-header" id="yelp-header" src={yelpHeader} /> */}
           <div id="backdrop-grey" />
           <div id="content-container">
             <div id="header">

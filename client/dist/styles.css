@@ -1,9 +1,9 @@
-body {
+#title-body {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  color: #050505;
+  color: #333333;
   background-color: #f5f5f5;
   margin: 0;
 }
@@ -33,7 +33,6 @@ body {
 #header {
   display: flex;
   width: inherit;
-  /* height: 180px; */
 }
 
 #sub-header {
@@ -51,22 +50,23 @@ body {
 .title-left-entry {
   display: flex;
   align-items: baseline;
-  margin-bottom: 7px;
+  margin-bottom: 13px;
 }
 
 #title-left-business-name {
   font-size: 36px;
-  font-size: 2vw;
-  font-size-adjust: initial;
+  /* font-size: 2vw; */
   margin: 0;
   padding-top: 6px;
 }
 
-#icon-claimed {
-  width: 22px;
-  height: 22px;
+#svg-claimed {
+  fill: #2873bc;
+  width: 20px;
+  height: 20px;
   padding: 5px;
   padding-bottom: 0px;
+  margin: 1px 0 0 1px;
 }
 
 #title-business-claimed {
@@ -98,13 +98,21 @@ body {
 
 #svg-histogram {
   fill: #999999;
+  height: 14px;
   margin-right: 3px;
   padding: 1px 0 0 0;
 }
 
-svg {
+.svg-generic {
   overflow: hidden;
-  height: 14px;
+  height: 18px;
+  fill: #666666;
+  margin-right: 5px;
+}
+
+#svg-star {
+  fill: #fff;
+  height: 24px;
 }
 
 #dot {
@@ -129,9 +137,9 @@ svg {
   background-color: #D32323;
   color: white;
   border: 1px #D32323;
-  border-radius: 5px;
-  padding: 8px 21px 9px 13px;
-  font-size: 16px;
+  border-radius: 3px;
+  padding: 6px 19px 7px 12px;
+  font-size: 14px;
   margin-right: 12px;
 }
 
@@ -146,7 +154,7 @@ svg {
   align-items: center;
   background: #ffffff;
   color: #666666;
-  padding: 4px 6px 4px 6px;
+  padding: 5px 6px 5px 6px;
   font-size: 12px;
   /* border: none; */
 }
@@ -188,18 +196,18 @@ svg {
   font-size: 14px;
 }
 
-ol {
+ol.map-box-list {
   list-style-type: none;
   margin: 5px 0 5px 0;
   padding-left: 5px !important;
 }
 
-a {
+a.anchor-link {
   color: #0073BB;
   text-decoration: none;
 }
 
-a:hover {
+a.anchor-link:hover {
   text-decoration: underline !important;
   text-decoration-color: #0073BB !important;
 }
@@ -211,12 +219,12 @@ a:hover {
 }
 
 .info-item-entry.no-icon {
-  margin-left: 21px;
+  margin-left: 24px;
 }
 
 .info-item-entry {
   display: flex;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 img.icon {
