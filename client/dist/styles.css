@@ -1,4 +1,4 @@
-#title {
+.title-class#title {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,33 +16,33 @@
   margin-bottom: 20px;
 }
 
-#title-component {
+.title-component {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#content-container {
+.content-container {
   display: flex;
   flex-direction: column;
   justify-content: left;
   min-width: 960px;
 }
 
-#header-component {
+.header-component {
   display: flex;
   width: inherit;
 }
 
-#sub-header {
+.sub-header {
   display: flex;
   width: inherit;
 }
 
 /* Title Left Component */
 
-#title-left {
+.title-left {
   background-color: #f5f5f5;
   width: 55%;
 }
@@ -53,14 +53,14 @@
   margin-bottom: 13px;
 }
 
-#title-left-business-name {
+.title-left-business-name {
   font-size: 36px;
   /* font-size: 2vw; */
   margin: 0;
   padding-top: 6px;
 }
 
-#svg-claimed {
+.svg-claimed {
   fill: #2873bc;
   width: 20px;
   height: 20px;
@@ -69,7 +69,7 @@
   margin: 1px 0 0 1px;
 }
 
-#title-business-claimed {
+.title-business-claimed {
   font-size: 16px;
 }
 
@@ -77,12 +77,12 @@
   align-items: center;
 }
 
-#img-rating {
+.img-rating {
   height: 24px;
   padding: 8px 8px 6px 0;
 }
 
-#review-count {
+.review-count {
   color: #666666;
 }
 
@@ -96,7 +96,7 @@
   margin-left: 7px;
 }
 
-#svg-histogram {
+.svg-histogram {
   fill: #999999;
   height: 14px;
   margin-right: 3px;
@@ -110,19 +110,25 @@
   margin-right: 5px;
 }
 
-#svg-star {
+.svg-non-generic {
+  overflow: hidden;
+  height: 18px;
+  margin-right: 5px;
+}
+
+.svg-star {
   fill: #fff;
   height: 24px;
 }
 
-#dot {
+.dot {
   margin: 0 6px 0 6px;
   color: #999999;
 }
 
 /* Title Right Component */
 
-#title-right {
+.title-right {
   background-color: #f5f5f5;
   display: flex;
   align-items: center;
@@ -131,7 +137,7 @@
 }
 
 
-#btn-review {
+.btn-review {
   display: flex;
   align-items: center;
   background-color: #D32323;
@@ -165,19 +171,19 @@
   margin-right: 5px;
 }
 
-#btn-share {
+.btn-share {
   border-color: #CCCCCC;
   border-left: white;
   border-right: white;
 }
 
-#btn-photo {
+.btn-photo {
   border-color: #CCCCCC;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
 
-#btn-save {
+.btn-save {
   border-color: #CCCCCC;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -185,7 +191,7 @@
 
 /* Map Box */
 
-#map-box-container {
+.map-box-container {
   border: 1px solid #CCCCCC;
   display: flex;
   flex-direction: column;
@@ -212,7 +218,7 @@ a.anchor-link:hover {
   text-decoration-color: #0073BB !important;
 }
 
-#map-box-image {
+.map-box-image {
   border: 1px solid #CCCCCC;
   width: 298px;
   cursor: pointer;

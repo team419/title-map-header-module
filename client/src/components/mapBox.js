@@ -25,9 +25,9 @@ const MapBox = (props) => {
   const send = 'Send to your Phone';
   const link = 'localhost:3418';
   return (
-    <div id="map-box-container">
-      <img id="map-box-image" alt="map" src={map} onClick={toggleModalMap} />
-      <div id="map-box-text">
+    <div className={css['map-box-container']}>
+      <img className={css['map-box-image']} alt="map" src={map} onClick={toggleModalMap} />
+      <div className={css['map-box-text']}>
         <ol className={css['map-box-list']}>
           <strong><InfoItem info={business.addressStreet} pngPath={png.address} /></strong>
           <strong><InfoItem info={business.addressCityStateZip} /></strong>
