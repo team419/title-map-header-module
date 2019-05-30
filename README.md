@@ -41,13 +41,14 @@ npm install
 mysql.server start
 mysql -u root < schema.sql
 ```
-in a new terminal window
+In a new terminal window
 ```
 npm run seed
 npm run react-dev
 ```
-in another new terminal window
+In another new terminal window
 ```
 npm start
 ```
+Navigate to localhost:4318 to run component
 
