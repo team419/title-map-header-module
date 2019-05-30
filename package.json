@@ -12,7 +12,7 @@
     "test": "jest",
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/index.js",
-    "acorn": "node database/generateData.js"
+    "seed": "node database/generateData.js"
   },
   "dependencies": {
     "babel-preset-env": "^1.7.0",

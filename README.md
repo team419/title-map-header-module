@@ -38,6 +38,6 @@ From within the root directory:
 brew install mysql@5.7
 npm install -g webpack
 npm install
-npm run acorn
+npm run seed
 ```
 
