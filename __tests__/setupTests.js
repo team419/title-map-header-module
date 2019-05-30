@@ -1,6 +1,7 @@
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
+import css from '../client/dist/styles.css';
 
 import App from '../client/src/components/app';
 import TitleRight from '../client/src/components/titleRight';
@@ -46,6 +47,8 @@ describe('Title Right Component', () => {
 
 describe('Title Left Component', () => {
   const { business } = dataMock;
+  const className = css['title-left-entry'];
+  console.log(`ClassName hash: ${className}`);
 
   test('Should render Title Left component without throwing an error', () => {
     const wrapper = shallow(<TitleLeft business={business} />);
@@ -54,7 +57,7 @@ describe('Title Left Component', () => {
 
   test('Should render three parent list entry items', () => {
     const wrapper = shallow(<TitleLeft business={business} />);
-    expect(wrapper.find('.title-left-entry')).toHaveLength(3);
+    expect(wrapper.find('#title-left').children()).toHaveLength(3);
   });
 });
 
@@ -81,16 +84,14 @@ describe('Info Item component', () => {
 
   test('Should render a single div when only passed info', () => {
     const wrapper = shallow(<InfoItem info={infoItem.info} />);
-    expect(wrapper.find('.info-item-entry').children()).toHaveLength(1);
-    expect(wrapper.exists('svg.svg-generic')).toEqual(false);
+    expect(wrapper.exists('sv')).toEqual(false);
     expect(wrapper.exists('span')).toEqual(false);
     expect(wrapper.exists('a')).toEqual(false);
   });
 
   test('Should render a string entry with corresponding png icon when passed info and icon props', () => {
     const wrapper = shallow(<InfoItem info={infoItem.info} pngPath={infoItem.png} />);
-    expect(wrapper.find('.info-item-entry').children()).toHaveLength(2);
-    expect(wrapper.exists('svg.svg-generic')).toEqual(true);
+    expect(wrapper.exists('svg')).toEqual(true);
     expect(wrapper.exists('span')).toEqual(true);
     expect(wrapper.exists('a')).toEqual(false);
   });
@@ -101,8 +102,7 @@ describe('Info Item component', () => {
       link={infoItem.link}
       pngPath={infoItem.png}
     />);
-    expect(wrapper.find('.info-item-entry').children()).toHaveLength(2);
-    expect(wrapper.exists('svg.svg-generic')).toEqual(true);
+    expect(wrapper.exists('svg')).toEqual(true);
     expect(wrapper.exists('span')).toEqual(true);
     expect(wrapper.exists('a')).toEqual(true);
   });
