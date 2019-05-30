@@ -7,8 +7,7 @@ import PropTypes from 'prop-types';
 import InfoItem from './infoItem';
 import css from '../../dist/styles.css';
 
-import map from '../images/map.png';
-
+const map = 'https://s3.us-east-2.amazonaws.com/fec-title-module/images/map.png';
 const png = {
   address: 'M 14 7 A 5 5 0 0 0 4 7 c 0 1.97 1.15 3.658 2.806 4.472 h -0.17 L 9 16 l 2.363 -4.528 h -0.17 C 12.85 10.658 14 8.97 14 7 Z M 9 5 a 2 2 0 1 1 0 4 a 2 2 0 0 1 0 -4 Z',
   directions: 'M 16.444 7.556 l -5.957 -5.958 a 2.145 2.145 0 0 0 -3.034 0 L 1.598 7.453 a 2.145 2.145 0 0 0 0 3.034 l 5.958 5.957 a 2 2 0 0 0 2.828 0 l 6.06 -6.06 a 2 2 0 0 0 0 -2.828 Z M 9.97 11.47 v -2.5 h -3 v 3 h -1 v -4 h 4 v -2.5 l 3 3 l -3 3 Z',

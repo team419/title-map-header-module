@@ -1,6 +1,7 @@
 import React from 'react';
 import css from '../../../dist/styles.css';
-import imgDetailsModal from '../../images/img-details-modal.png';
+
+const imgDetailsModal = 'https://s3.us-east-2.amazonaws.com/fec-title-module/images/img-details-modal.png';
 
 // Need refactor to handle dynamic details modal
 // import PropTypes from 'prop-types';

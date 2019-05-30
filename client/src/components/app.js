@@ -11,8 +11,8 @@ import ModalMap from './modals/modalMap';
 import ModalDetails from './modals/modalDetails';
 import ModalSend from './modals/modalSend';
 
-// import photoCarousel from '../images/photoCarousel.png';
-// import yelpHeader from '../images/img-yelp-header.png';
+// const photoCarousel = 'https://s3.us-east-2.amazonaws.com/fec-title-module/images/photoCarousel.png';
+// const yelpHeader = 'https://s3.us-east-2.amazonaws.com/fec-title-module/images/img-yelp-header.png';
 
 class App extends React.Component {
   constructor() {
