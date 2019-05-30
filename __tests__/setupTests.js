@@ -45,7 +45,7 @@ describe('Title Right Component', () => {
   });
 });
 
-describe('Title Left Component', () => {
+xdescribe('Title Left Component', () => {
   const { business } = dataMock;
   const className = css['title-left-entry'];
   console.log(`ClassName hash: ${className}`);
@@ -61,7 +61,7 @@ describe('Title Left Component', () => {
   });
 });
 
-describe('Map Box component', () => {
+xdescribe('Map Box component', () => {
   const { business } = dataMock;
   const wrapper = shallow(<MapBox business={business} />);
 

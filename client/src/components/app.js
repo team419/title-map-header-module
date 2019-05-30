@@ -10,6 +10,7 @@ import ModalSave from './modals/modalSave';
 import ModalMap from './modals/modalMap';
 import ModalDetails from './modals/modalDetails';
 import ModalSend from './modals/modalSend';
+import css from '../../dist/styles.css';
 
 // const photoCarousel = 'https://s3.us-east-2.amazonaws.com/fec-title-module/images/photoCarousel.png';
 // const yelpHeader = 'https://s3.us-east-2.amazonaws.com/fec-title-module/images/img-yelp-header.png';
@@ -117,12 +118,12 @@ class App extends React.Component {
 
     if (business) {
       return (
-        <div id="title-component">
+        <div className={css['title-component']}>
           {/* add in line below to goggle on the generic header bar */}
           {/* <img alt="yelp-header" id="yelp-header" src={yelpHeader} /> */}
-          <div id="backdrop-grey" />
-          <div id="content-container">
-            <div id="header-component">
+          {/* <div className={css.['backdrop-grey']} id="backdrop-grey" /> */}
+          <div clsssName={css['content-container']}>
+            <div className={css['header-component']}>
               {/* refactor needed */}
               <TitleLeft
                 business={business}
@@ -133,7 +134,7 @@ class App extends React.Component {
                 toggleModalSave={this.toggleModalSave}
               />
             </div>
-            <div id="sub-header">
+            <div className={css['sub-header']}>
               {/* refactor needed */}
               <MapBox
                 business={business}
