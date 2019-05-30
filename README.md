@@ -38,6 +38,16 @@ From within the root directory:
 brew install mysql@5.7
 npm install -g webpack
 npm install
+mysql.server start
+mysql -u root < schema.sql
+```
+in a new terminal window
+```
 npm run seed
+npm run react-dev
+```
+in another new terminal window
+```
+npm start
 ```
 
