@@ -3,6 +3,7 @@ import $ from 'jquery';
 import TitleLeft from './titleLeft';
 import TitleRight from './titleRight';
 import MapBox from './mapBox';
+
 import Modal from './modals/modal';
 import ModalShare from './modals/modalShare';
 import ModalSave from './modals/modalSave';
@@ -10,8 +11,8 @@ import ModalMap from './modals/modalMap';
 import ModalDetails from './modals/modalDetails';
 import ModalSend from './modals/modalSend';
 
-import photoCarousel from '../images/photoCarousel.png';
-import yelpHeader from '../images/img-yelp-header.png';
+// import photoCarousel from '../images/photoCarousel.png';
+// import yelpHeader from '../images/img-yelp-header.png';
 
 class App extends React.Component {
   constructor() {
@@ -19,7 +20,8 @@ class App extends React.Component {
 
     this.state = {
       business: null,
-      // showModal: false,
+      showModal: null,
+
       showModalDetails: false,
       showModalShare: false,
       showModalSave: false,
@@ -28,6 +30,8 @@ class App extends React.Component {
     };
     this.assignBusiness = this.assignBusiness.bind(this);
     // this.toggleModal = this.toggleModal.bind(this);
+    this.toggleModalOff = this.toggleModalOff.bind(this);
+
     this.toggleModalDetails = this.toggleModalDetails.bind(this);
     this.toggleModalShare = this.toggleModalShare.bind(this);
     this.toggleModalSave = this.toggleModalSave.bind(this);
@@ -58,6 +62,12 @@ class App extends React.Component {
   // Need major refactor to use a single toggleModal function across all modals
   // Possible make event listeners to ensure when a triggering element is clicked,
   // that only the proper modal will be toggled.
+
+  toggleModalOff() {
+    this.setState({
+      showModal: null,
+    });
+  }
 
   toggleModalDetails() {
     const { showModalDetails } = this.state;
@@ -108,10 +118,11 @@ class App extends React.Component {
     if (business) {
       return (
         <div id="title-component">
-          <img alt="yelp-header" id="yelp-header" src={yelpHeader} />
+          {/* add in line below to goggle on the generic header bar */}
+          {/* <img alt="yelp-header" id="yelp-header" src={yelpHeader} /> */}
           <div id="backdrop-grey" />
           <div id="content-container">
-            <div id="header">
+            <div id="header-component">
               {/* refactor needed */}
               <TitleLeft
                 business={business}
@@ -129,7 +140,8 @@ class App extends React.Component {
                 toggleModalMap={this.toggleModalMap}
                 toggleModalSend={this.toggleModalSend}
               />
-              <img id="insert-photo-component-here" alt="carousel" src={photoCarousel} />
+              {/* line below is the placeholder for photo carousel component */}
+              {/* <img id="insert-photo-componentgit a-here" alt="carousel" src={photoCarousel} /> */}
             </div>
           </div>
           {/* Need to refactor modal props for reusable toggleModal function */}

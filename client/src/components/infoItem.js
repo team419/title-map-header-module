@@ -1,40 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import css from '../../dist/styles.css';
 
 const InfoItem = (props) => {
   const {
-    info, iconUrl, link,
+    info, pngPath, link,
   } = props;
 
-  if (info && link && iconUrl) {
+  if (info && link && pngPath) {
     return (
-      <div className="info-item-entry">
-        <img className="icon" alt="icon" src={iconUrl} />
-        <a href={link}><span>{info}</span></a>
+      <div className={css['info-item-entry']}>
+        <svg role="img" className={css['svg-generic']} viewBox="0 0 18 18">
+          <path d={pngPath} />
+        </svg>
+        <a className={css['anchor-link']} href={link}><span>{info}</span></a>
       </div>
     );
   }
-  if (info && iconUrl) {
+  if (info && pngPath) {
     return (
-      <div className="info-item-entry">
-        <img className="icon" alt="icon" src={iconUrl} />
+      <div className={css['info-item-entry']}>
+        <svg role="img" className={css['svg-generic']} viewBox="0 0 18 18">
+          <path d={pngPath} />
+        </svg>
         <span>{info}</span>
       </div>
     );
   }
   return (
-    <div className="info-item-entry no-icon">{info}</div>
+    <div className={`${css['info-item-entry']} ${css['no-icon']}`}>{info}</div>
   );
 };
 
 InfoItem.propTypes = {
   info: PropTypes.string.isRequired,
-  iconUrl: PropTypes.string,
+  pngPath: PropTypes.string,
   link: PropTypes.string,
 };
 
 InfoItem.defaultProps = {
-  iconUrl: '',
+  pngPath: '',
   link: '',
 };
 
