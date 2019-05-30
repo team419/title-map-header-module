@@ -50,5 +50,5 @@ In another new terminal window
 ```
 npm start
 ```
-Navigate to localhost:4318 to run component
+Navigate to localhost:3418 to run component
 
