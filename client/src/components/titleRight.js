@@ -9,7 +9,7 @@ const TitleRight = (props) => {
   const { toggleModalShare, toggleModalSave } = props;
 
   return (
-    <div className={`${css.title} ${css['title-right']}`}>
+    <div className={css['title-right']}>
       <button type="button" className={css['btn-review']}>
         <svg role="img" className={`${css['icon-svg']} ${css['svg-generic']} ${css['svg-star']}`} viewBox="0 0 24 24">
           <path d="M 12 1.5 l 2.61 6.727 l 6.89 0.53 l -5.278 4.688 l 1.65 7.055 L 12 16.67 L 6.13 20.5 l 1.648 -7.055 L 2.5 8.757 l 6.89 -0.53 L 12 1.5 Z" />

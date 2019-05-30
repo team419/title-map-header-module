@@ -118,39 +118,41 @@ class App extends React.Component {
 
     if (business) {
       return (
-        <div className={css['title-component']}>
-          {/* add in line below to goggle on the generic header bar */}
-          {/* <img alt="yelp-header" id="yelp-header" src={yelpHeader} /> */}
-          {/* <div className={css.['backdrop-grey']} id="backdrop-grey" /> */}
-          <div clsssName={css['content-container']}>
-            <div className={css['header-component']}>
-              {/* refactor needed */}
-              <TitleLeft
-                business={business}
-                toggleModalDetails={this.toggleModalDetails}
-              />
-              <TitleRight
-                toggleModalShare={this.toggleModalShare}
-                toggleModalSave={this.toggleModalSave}
-              />
+        <div className={css['super-container']}>
+          <div className={css['title-component']}>
+            {/* add in line below to goggle on the generic header bar */}
+            {/* <img alt="yelp-header" id="yelp-header" src={yelpHeader} /> */}
+            {/* <div className={css.['backdrop-grey']} id="backdrop-grey" /> */}
+            <div clsssName={css['content-container']}>
+              <div className={css['header-component']}>
+                {/* refactor needed */}
+                <TitleLeft
+                  business={business}
+                  toggleModalDetails={this.toggleModalDetails}
+                />
+                <TitleRight
+                  toggleModalShare={this.toggleModalShare}
+                  toggleModalSave={this.toggleModalSave}
+                />
+              </div>
+              <div className={css['sub-header']}>
+                {/* refactor needed */}
+                <MapBox
+                  business={business}
+                  toggleModalMap={this.toggleModalMap}
+                  toggleModalSend={this.toggleModalSend}
+                />
+                {/* line below is the placeholder for photo carousel component */}
+                {/* <img id="insert-photo-componentgit a-here" alt="carousel" src={photoCarousel} /> */}
+              </div>
             </div>
-            <div className={css['sub-header']}>
-              {/* refactor needed */}
-              <MapBox
-                business={business}
-                toggleModalMap={this.toggleModalMap}
-                toggleModalSend={this.toggleModalSend}
-              />
-              {/* line below is the placeholder for photo carousel component */}
-              {/* <img id="insert-photo-componentgit a-here" alt="carousel" src={photoCarousel} /> */}
-            </div>
+            {/* Need to refactor modal props for reusable toggleModal function */}
+            <Modal toggleModal={this.toggleModalDetails} modalClass="modal-details" showModal={showModalDetails} content={<ModalDetails />} />
+            <Modal toggleModal={this.toggleModalShare} modalClass="modal-share" showModal={showModalShare} content={<ModalShare />} />
+            <Modal toggleModal={this.toggleModalSave} modalClass="modal-save" showModal={showModalSave} content={<ModalSave />} />
+            <Modal toggleModal={this.toggleModalMap} modalClass="modal-map" showModal={showModalMap} content={<ModalMap />} />
+            <Modal toggleModal={this.toggleModalSend} modalClass="modal-send" showModal={showModalSend} content={<ModalSend />} />
           </div>
-          {/* Need to refactor modal props for reusable toggleModal function */}
-          <Modal toggleModal={this.toggleModalDetails} modalClass="modal-details" showModal={showModalDetails} content={<ModalDetails />} />
-          <Modal toggleModal={this.toggleModalShare} modalClass="modal-share" showModal={showModalShare} content={<ModalShare />} />
-          <Modal toggleModal={this.toggleModalSave} modalClass="modal-save" showModal={showModalSave} content={<ModalSave />} />
-          <Modal toggleModal={this.toggleModalMap} modalClass="modal-map" showModal={showModalMap} content={<ModalMap />} />
-          <Modal toggleModal={this.toggleModalSend} modalClass="modal-send" showModal={showModalSend} content={<ModalSend />} />
         </div>
       );
     }

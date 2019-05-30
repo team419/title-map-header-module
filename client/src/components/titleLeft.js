@@ -17,7 +17,7 @@ const TitleLeft = (props) => {
   };
 
   return (
-    <div className={`${css['css.title']} ${css['title-left']}`}>
+    <div className={css['title-left']}>
       <div className={css['title-left-entry']}>
         <h1 className={css['title-left-business-name']}>{business.name}</h1>
         <svg role="img" className={`${css['svg-non-generic']} ${css['svg-claimed']}`} viewBox="0 0 18 18">
