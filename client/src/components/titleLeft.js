@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ratingFourStar from '../images/rating-four-star.png';
 import css from '../../dist/styles.css';
 
+const ratingFourStar = 'https://s3.us-east-2.amazonaws.com/fec-title-module/images/rating-four-star.png';
 
 const TitleLeft = (props) => {
   const { business, toggleModalDetails } = props;
