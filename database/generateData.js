@@ -21,7 +21,7 @@ for (let i = 0; i < businesses.length; i += 1) {
     if (err) {
       throw (err);
     } else {
-      console.log(`inserted into business: ${i}`);
+      // console.log(`inserted into business: ${i}`);
     }
   });
 }
@@ -38,9 +38,11 @@ for (let i = 0; i < reviews.length; i += 1) {
     if (err) {
       throw (err);
     } else {
-      console.log(`inserted into reviews: ${i}`);
+      // console.log(`inserted into reviews: ${i}`);
     }
   });
 }
+
+console.log('Database Seeded!');
 
 db.end();

@@ -31,7 +31,7 @@ module.exports.generateBusiness = function (amount = 100) {
 };
 
 // generate fake date for 7000 total reviews of the corresponding 100 businesses generated above
-module.exports.generateReviews = function (amount = 15000) {
+module.exports.generateReviews = function (amount = 3000) {
   const reviews = [];
   for (let i = 1; i < amount; i += 1) {
     const entry = {
