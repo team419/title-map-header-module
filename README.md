@@ -35,6 +35,7 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 From within the root directory:
 
 ```sh
+nvm install node
 brew install mysql@5.7
 npm install -g webpack
 npm install

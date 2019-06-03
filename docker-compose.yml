@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  title:
+    # image: kimbyongjin/title_module:title_module
+    build: ./
+    depends_on:
+      - 'database'
+    ports:
+      - '3418:3418'
+
+  database:
+    # image: kimbyongjin/title_database:title_database
+    # build: database/
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'title_module'
+      MYSQL_ROOT_PASSWORD: 'docking'
+    ports:
+      - '3307:4406'
