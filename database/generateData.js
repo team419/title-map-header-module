@@ -4,39 +4,6 @@ const db = require('./index.js');
 const businesses = generateData.generateBusiness();
 const reviews = generateData.generateReviews();
 
-db.connect();
-
-db.query('USE title_module');
-
-db.query('DROP TABLE IF IT EXISTS business');
-db.query('DROP TABLE IF IT EXISTS reviews');
-
-db.query(`CREATE TABLE business (
-  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  name varchar(255),
-  claimed int,
-  overallRating decimal(2, 1),
-  totalReviews int,
-  averageCost int,
-  businessTypeOne varchar(255),
-  businessTypeTwo varchar(255),
-  addressStreet varchar(255),
-  addressCityStateZip varchar(255),
-  addressBetween varchar(255),
-  addressNeighborhood varchar(255),
-  phoneNumber varchar(255),
-  url varchar(255)
-);`);
-
-db.query(`CREATE TABLE reviews (
-  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  username varchar(255),
-  text varchar(500),
-  rating decimal(2, 1),
-  date varchar(150),
-  businessId int NOT NULL
-);`);
-
 for (let i = 0; i < businesses.length; i += 1) {
   const currentObj = businesses[i];
   const queryString = `INSERT INTO business

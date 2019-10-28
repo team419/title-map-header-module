@@ -11,12 +11,12 @@ services:
 
   database:
     # image: kimbyongjin/title_database:title_database
-    # build: database/
-    image: mysql
+    build: database/
+    # image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
       MYSQL_DATABASE: 'title_module'
       MYSQL_ROOT_PASSWORD: 'docking'
     ports:
-      - '3307:4406'
+      - '3307:3306'
